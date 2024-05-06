@@ -52,7 +52,7 @@ const Header = () => {
         </Link>
 
         <Link
-          href="https://www.linkedin.com/in/benmrad-bilel-a3a01122a/"
+          href="https://www.linkedin.com/in/benmrad-bilel-a3a01122a"
           target="_blank"
           className="w-[40px] h-[40px]  bg-[#0A66C2] rounded-md flex items-center gap-x-2 justify-center hover:opacity-70 transition-all duration-500 ease-in-out"
         >
