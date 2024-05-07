@@ -95,7 +95,10 @@ const Header = () => {
               <MenuIcon size={24} className="text-slate-50 flex-shrink-0" />
             </Button>
           </SheetTrigger>
-          <SheetContent side={"left"} className="bg-slate-900 w-72">
+          <SheetContent
+            side={"left"}
+            className="bg-slate-900 w-72 overflow-y-auto"
+          >
             <div className="mt-10 flex flex-col gap-y-8">
               <div className="w-full flex items-center gap-x-2">
                 <Avatar className=" w-16 h-full rounded-md">
