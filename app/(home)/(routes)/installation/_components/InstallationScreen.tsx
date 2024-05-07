@@ -1,17 +1,31 @@
 "use client";
-
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Image from "next/image";
-import React from "react";
 import { CopyBlock, dracula } from "react-code-blocks";
 import InstallationStep from "./InstallationStep";
 
 import CodeMirror from "@uiw/react-codemirror";
 import { javascript } from "@codemirror/lang-javascript";
 import { dracula as codeMirrorDracula } from "@uiw/codemirror-theme-dracula";
-import { VidSyncPlayer } from "vidsync";
-import { Sandpack } from "@codesandbox/sandpack-react";
-import { Header } from "@/components/shared";
+import { Highlighter } from "rc-highlight";
+
+const vidSyncVite = `
+   import { VidSyncPlayer } from "vidsync";
+
+   export const App = () => {
+
+      return <VidSyncPlayer src='https://www.your-video-source'/>
+
+  }`;
+
+const vidSyncNext = `
+   import { VidSyncPlayer } from "vidsync";
+  
+   const Page = () => {
+    
+      return <VidSyncPlayer src='https://www.your-video-source'/>
+  
+  }`;
 
 const InstallationScreen = () => {
   return (
@@ -63,12 +77,13 @@ const InstallationScreen = () => {
             </p>
           </h3>
           <div className="p-2 flex flex-col gap-y-4">
-            <CopyBlock
-              text={`npm create vite@latest`}
-              language="bash"
-              showLineNumbers={false}
-              theme={dracula}
-            />
+            <Highlighter
+              style={{
+                background: "black",
+              }}
+            >
+              npm create vite@latest
+            </Highlighter>
           </div>
         </InstallationStep>
         <InstallationStep>
@@ -85,18 +100,20 @@ const InstallationScreen = () => {
             </p>
           </h3>
           <div className="p-2 flex flex-col gap-y-4">
-            <CopyBlock
-              text={`yarn add vidsync`}
-              language="bash"
-              showLineNumbers={false}
-              theme={dracula}
-            />
-            <CopyBlock
-              text={`npm install vidsync`}
-              language="bash"
-              showLineNumbers={false}
-              theme={dracula}
-            />
+            <Highlighter
+              style={{
+                background: "black",
+              }}
+            >
+              yarn add vidsync
+            </Highlighter>
+            <Highlighter
+              style={{
+                background: "black",
+              }}
+            >
+              npm install vidsync
+            </Highlighter>
           </div>
         </InstallationStep>
         <InstallationStep>
@@ -113,13 +130,13 @@ const InstallationScreen = () => {
             </p>
           </h3>
 
-          <CodeMirror
-            value={`import { VidSyncPlayer } from "vidsync";\n\nexport const App = () => {\n\n  return <VidSyncPlayer src='https://www.your-video-source'/>\n\n}`}
-            className="rounded-xl h-fit bg-red-500"
-            extensions={[javascript({ jsx: true })]}
-            theme={codeMirrorDracula}
-            editable={false}
-          />
+          <Highlighter
+            style={{
+              background: "black",
+            }}
+          >
+            {vidSyncVite}
+          </Highlighter>
         </InstallationStep>
       </TabsContent>
       <TabsContent value="next" className="w-full flex flex-col gap-y-6">
@@ -137,18 +154,20 @@ const InstallationScreen = () => {
             </p>
           </h3>
           <div className="p-2 flex flex-col gap-y-4">
-            <CopyBlock
-              text={`yarn create next-app@latest`}
-              language="bash"
-              showLineNumbers={false}
-              theme={dracula}
-            />
-            <CopyBlock
-              text={`npx create-next-app@latest`}
-              language="bash"
-              showLineNumbers={false}
-              theme={dracula}
-            />
+            <Highlighter
+              style={{
+                background: "black",
+              }}
+            >
+              npx create-next-app@latest
+            </Highlighter>
+            <Highlighter
+              style={{
+                background: "black",
+              }}
+            >
+              yarn create next-app@latest
+            </Highlighter>
           </div>
         </InstallationStep>
         <InstallationStep>
@@ -165,18 +184,20 @@ const InstallationScreen = () => {
             </p>
           </h3>
           <div className="p-2 flex flex-col gap-y-4">
-            <CopyBlock
-              text={`yarn add vidsync`}
-              language="bash"
-              showLineNumbers={false}
-              theme={dracula}
-            />
-            <CopyBlock
-              text={`npm install vidsync`}
-              language="bash"
-              showLineNumbers={false}
-              theme={dracula}
-            />
+            <Highlighter
+              style={{
+                background: "black",
+              }}
+            >
+              npm install vidsync
+            </Highlighter>
+            <Highlighter
+              style={{
+                background: "black",
+              }}
+            >
+              yarn add vidsync
+            </Highlighter>
           </div>
         </InstallationStep>
 
@@ -193,14 +214,13 @@ const InstallationScreen = () => {
               file
             </p>
           </h3>
-
-          <CodeMirror
-            value={`import { VidSyncPlayer } from "vidsync";\n\nconst Page = () => {\n\n  return <VidSyncPlayer src='https://www.your-video-source'/>\n\n}`}
-            className="rounded-xl h-fit bg-red-500"
-            extensions={[javascript({ jsx: true })]}
-            theme={codeMirrorDracula}
-            editable={false}
-          />
+          <Highlighter
+            style={{
+              background: "black",
+            }}
+          >
+            {vidSyncNext}
+          </Highlighter>
         </InstallationStep>
       </TabsContent>
     </Tabs>
