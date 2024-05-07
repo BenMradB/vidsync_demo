@@ -147,8 +147,6 @@ const Demo = () => {
           primaryColor={primaryColor.hex}
           containerStyles={{
             width: "100%",
-            height: "500px",
-            background: "",
           }}
           videoStyles={{
             maxHeight: "100% !important",
