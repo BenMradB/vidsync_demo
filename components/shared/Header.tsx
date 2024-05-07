@@ -79,7 +79,11 @@ const Header = () => {
         </Link>
 
         <Avatar className=" w-16 h-full hidden md:block">
-          <AvatarImage src="/images/profile.jpeg" alt="profile" />
+          <AvatarImage
+            src="/images/profile.jpeg"
+            alt="profile"
+            className="object-cover"
+          />
           <AvatarFallback>
             <Skeleton className="w-16 h-full rounded-lg" />
           </AvatarFallback>
@@ -91,14 +95,28 @@ const Header = () => {
               <MenuIcon size={24} className="text-slate-50 flex-shrink-0" />
             </Button>
           </SheetTrigger>
-          <SheetContent side={"left"}>
+          <SheetContent side={"left"} className="bg-slate-900 w-72">
             <div className="mt-10 flex flex-col gap-y-8">
-              <Avatar className=" w-16 h-full rounded-md">
-                <AvatarImage src="/images/profile.jpeg" alt="profile" />
-                <AvatarFallback>
-                  <Skeleton className="w-16 h-full rounded-lg" />
-                </AvatarFallback>
-              </Avatar>
+              <div className="w-full flex items-center gap-x-2">
+                <Avatar className=" w-16 h-full rounded-md">
+                  <AvatarImage
+                    src="/images/profile.jpeg"
+                    alt="profile"
+                    className="object-cover"
+                  />
+                  <AvatarFallback>
+                    <Skeleton className="w-16 h-full rounded-full" />
+                  </AvatarFallback>
+                </Avatar>
+                <div className="w-full flex flex-col gap-y-1">
+                  <p className="text-lg text-slate-50 font-bold">
+                    Benmrad Bilel
+                  </p>
+                  <span className="text-md font-semibold text-slate-300">
+                    FullStack JS Developer
+                  </span>
+                </div>
+              </div>
               {routes.map((route) => (
                 <Link
                   key={route.path}
