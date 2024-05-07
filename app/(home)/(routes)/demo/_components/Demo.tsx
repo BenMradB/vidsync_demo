@@ -1,6 +1,5 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import React, { useState } from "react";
 import { ColorPicker, useColor } from "react-color-palette";
 import "react-color-palette/css";

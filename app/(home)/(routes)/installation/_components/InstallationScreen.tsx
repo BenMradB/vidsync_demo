@@ -16,20 +16,36 @@ import { Header } from "@/components/shared";
 const InstallationScreen = () => {
   return (
     <Tabs defaultValue="vite" className="w-full">
-      <TabsList className="grid grid-cols-2 w-full h-[80px] bg-slate-900">
+      <TabsList className="grid grid-cols-2 w-full md:h-[80px] h-[50px] bg-slate-900">
         <TabsTrigger
           value="vite"
           className="h-full flex items-center justify-center gap-x-2"
         >
-          <Image src="/icons/vite.svg" alt="Vite" width={50} height={50} />
-          <p className="text-lg font-bold tracking-wider">Vite</p>
+          <Image
+            src="/icons/vite.svg"
+            alt="Vite"
+            width={50}
+            height={50}
+            className="w-[30px] h-[30px]  md:w-[50px] md:h-[50px]"
+          />
+          <p className="text-lg font-bold tracking-wider hidden md:block ">
+            Vite
+          </p>
         </TabsTrigger>
         <TabsTrigger
           value="next"
           className="h-full flex items-center justify-center gap-x-2"
         >
-          <Image src="/icons/next.svg" alt="next" width={50} height={50} />
-          <p className="text-lg font-bold tracking-wider">NextJS</p>
+          <Image
+            src="/icons/next.svg"
+            alt="next"
+            width={50}
+            height={50}
+            className="w-[30px] h-[30px]  md:w-[50px] md:h-[50px]"
+          />
+          <p className="text-lg font-bold tracking-wider hidden md:block ">
+            NextJS
+          </p>
         </TabsTrigger>
       </TabsList>
       <TabsContent value="vite" className="w-full flex flex-col gap-y-6">

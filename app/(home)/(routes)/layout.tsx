@@ -8,7 +8,7 @@ const HomeLayout = ({ children }: { children: React.ReactNode }) => {
       <div className="flex gap-x-10">
         <Sidebar />
         <div
-          className="flex-1 w-full py-12 overflow-y-auto"
+          className="flex-1 w-full py-12 overflow-y-auto px-8 md:px-0"
           style={{
             height: "calc(100vh - 100px)",
           }}

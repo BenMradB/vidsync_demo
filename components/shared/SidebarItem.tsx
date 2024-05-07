@@ -14,15 +14,17 @@ const SidebarItem = ({ path, label, icon }: SidebarItemProps) => {
     <Link
       href={path}
       className={`
-        w-full h-[30px] px-4 py-6 flex items-center gap-x-3 rounded-md transition-all duration-500 ease-out
+        w-full h-[30px] px-4 py-6 flex items-center justify-center lg:justify-start gap-x-3 rounded-md transition-all duration-500 ease-out
         hover:bg-primaryColor text-slate-50
          ${isActive ? "bg-primaryColor" : ""}
       `}
     >
       <Image src={icon} alt={label} width={25} height={25} />
-      <p className={`text-slate-50  text-lg font-semibold capitalize`}>
+      <p
+        className={`text-slate-50  text-lg font-semibold capitalize hidden lg:block`}
+      >
         {" "}
-        {label}{" "}
+        {label}
       </p>
     </Link>
   );
